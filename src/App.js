@@ -1,6 +1,8 @@
+//import=> necessary files
 import React from "react";
 import "./App.css";
-// passing props and complete and undo and removing
+
+// complete and undo and removing =>logic
 function Todo({ todo, index, completeTodo, removeTodo }) {
   return (
     <div>
@@ -10,17 +12,18 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
       >
         {todo.text}
         <div className='btn'>
-          <button onClick={() => completeTodo(index)} className="complete-undo">{todo.isCompleted?<i className="fa fa-undo" aria-hidden="true"></i>:"completed"} </button>
+          <button onClick={() => completeTodo(index)} className="complete-undo">{todo.isCompleted ? <i className="fa fa-undo" aria-hidden="true"></i> : "completed"} </button>
           <button onClick={() => removeTodo(index)} className="delete"><i className="fa fa-trash" aria-hidden="true"></i></button>
         </div>
       </div>
     </div>
   );
 }
+
 //addtodo
 function TodoForm({ addTodo }) {
   const [value, setValue] = React.useState("");
-//handle sumbit
+  //handle sumbit
   const handleSubmit = e => {
     e.preventDefault();
     if (!value) return;
@@ -30,7 +33,7 @@ function TodoForm({ addTodo }) {
 
   return (
     //form and buttons
-    <form onSubmit={handleSubmit}    className="form">
+    <form onSubmit={handleSubmit} className="form">
       <input
         type="text"
         className="input"
@@ -59,29 +62,29 @@ function App() {
       isCompleted: false
     }
   ]);
-//add
+  //add function
   const addTodo = text => {
     const newTodos = [...todos, { text }];
     setTodos(newTodos);
   };
 
-//complete
+  //complete function
   const completeTodo = index => {
     const newTodos = [...todos];
 
-   
-  if(newTodos[index].isCompleted){
-    newTodos[index].isCompleted=false;
-  }
 
-  else{
-    newTodos[index].isCompleted=true;
-  }
+    if (newTodos[index].isCompleted) {
+      newTodos[index].isCompleted = false;
+    }
+
+    else {
+      newTodos[index].isCompleted = true;
+    }
     // newTodos[index].isCompleted = true;
     setTodos(newTodos);
   };
 
-//remove
+  //remove function
   const removeTodo = index => {
     const newTodos = [...todos];
     newTodos.splice(index, 1);

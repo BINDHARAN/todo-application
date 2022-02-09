@@ -1,10 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Allerta+Stencil|Source+Code+Pro:900");
+
+/* detail root variables */
+:root {
+  --font-serif: "Allerta Stencil", sans-serif;
+  --font-mono: "Source Code Pro", monospace;
+  --color-bg: #223458;
+}
 
 /* title */
-h1{
-
-text-align: center;
-font-size: 5 rem;
-
-} 
-
-  
+h1 {
+  text-align: center;
+  font-size: 5 rem;
+  font-family: var(--font-serif);
+  color: var(--color-bg);
+}

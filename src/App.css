@@ -1,8 +1,31 @@
-/* total todo box */
+@import url("https://fonts.googleapis.com/css?family=Allerta+Stencil|Source+Code+Pro:900");
+
+/* detail root variables */
+:root {
+  --font-serif: "Allerta Stencil", sans-serif;
+  --font-mono: "Source Code Pro", monospace;
+  --color-text: #efeee7;
+  --color-bg: #223458;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*  todo-container */
 .app {
-  background: #209cee;
- padding: 30px;
-  
+   /* a top a solid background add the SVG pattern, on both sides of the page */
+   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.458 26.458" opacity="0.1"><g transform="translate(2.646 -273.187)"><ellipse cx="3.509" cy="287.754" rx="2.603" ry="2.588" fill="none" stroke="%23fff" stroke-width="1.812" stroke-linecap="round" paint-order="stroke fill markers"/><g transform="matrix(.29742 .1707 -.17171 .29567 36.105 196.22)" fill="%23fff"><rect ry=".794" rx=".794" y="238.843" x="52.118" height="23.813" width="5.292" paint-order="stroke fill markers"/><rect transform="rotate(90)" width="5.292" height="23.813" x="248.104" y="-66.67" rx=".794" ry=".794" paint-order="stroke fill markers"/></g><g transform="matrix(.29742 -.1707 .17171 .29567 -48.452 228.336)" fill="%23fff"><rect width="5.292" height="23.813" x="52.118" y="238.843" rx=".794" ry=".794" paint-order="stroke fill markers"/><rect ry=".794" rx=".794" y="-66.67" x="248.104" height="23.813" width="5.292" transform="rotate(90)" paint-order="stroke fill markers"/></g><ellipse cy="285.947" cx="17.658" rx="2.603" ry="2.588" fill="none" stroke="%23fff" stroke-width="1.812" stroke-linecap="round" paint-order="stroke fill markers"/></g></svg>'),
+   url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.458 26.458" opacity="0.1"><g transform="translate(2.646 -273.187)"><ellipse cx="3.509" cy="287.754" rx="2.603" ry="2.588" fill="none" stroke="%23fff" stroke-width="1.812" stroke-linecap="round" paint-order="stroke fill markers"/><g transform="matrix(.29742 .1707 -.17171 .29567 36.105 196.22)" fill="%23fff"><rect ry=".794" rx=".794" y="238.843" x="52.118" height="23.813" width="5.292" paint-order="stroke fill markers"/><rect transform="rotate(90)" width="5.292" height="23.813" x="248.104" y="-66.67" rx=".794" ry=".794" paint-order="stroke fill markers"/></g><g transform="matrix(.29742 -.1707 .17171 .29567 -48.452 228.336)" fill="%23fff"><rect width="5.292" height="23.813" x="52.118" y="238.843" rx=".794" ry=".794" paint-order="stroke fill markers"/><rect ry=".794" rx=".794" y="-66.67" x="248.104" height="23.813" width="5.292" transform="rotate(90)" paint-order="stroke fill markers"/></g><ellipse cy="285.947" cx="17.658" rx="2.603" ry="2.588" fill="none" stroke="%23fff" stroke-width="1.812" stroke-linecap="round" paint-order="stroke fill markers"/></g></svg>'),
+   var(--color-bg);
+ background-repeat: repeat-y;
+ background-size: 250px, 250px, 100%;
+ background-position-x: calc(100% + 50px), -50px, 0;
+ background-position-y: calc(100% + 50px), -50px, 0;
+  padding: 30px;
+  height: auto;
+  margin-top: 20px;
   
 }
 /* todo lists */
@@ -11,9 +34,9 @@
   border-radius: 4px;
   /* max-width: 400px; */
   padding: 5px;
-  margin: 100px auto;
+  margin: 50px auto;
+  margin-top:100px;
 
-  
 }
 /* todo items */
 .todo {
@@ -23,90 +46,84 @@
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
   display: flex;
   font-size: 20px;
+  font-family: var(--font-serif);
   justify-content: space-between;
   margin-bottom: 6px;
   padding: 3px 10px;
   text-align: justify;
-  
-  
 }
 
 /*  input and buttons */
 
-.form{
+.form {
   display: flex;
   justify-content: center;
 }
 
-.add{
-  background: linear-gradient(90deg,#5d0cff,#9b00fa);
-   border: none;
-    border-radius: 0 4px 4px 0;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-    padding: 16px;
-    text-transform: capitalize;
+.add {
+  background: linear-gradient(90deg, #5d0cff, #9b00fa);
+  border: none;
+  border-radius: 0 4px 4px 0;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  padding: 16px;
+  text-transform: capitalize;
+  font-family: cursive;
 }
-.delete{
+.delete {
   /* background: linear-gradient(90deg,#040353,#9104e9); */
   border: none;
-   border-radius: 0 4px 4px 0;
-   /* color: #fff; */
-   cursor: pointer;
-   outline: none;
-   padding: 16px;
-   text-transform: capitalize;
+  border-radius: 0 4px 4px 0;
+  /* color: #fff; */
+  cursor: pointer;
+  outline: none;
+  padding: 16px;
+  text-transform: capitalize;
 }
-.complete-undo{
-  background: linear-gradient(90deg,#080808,#8f8c8f);
+.complete-undo {
+  background: linear-gradient(90deg, #080808, #8f8c8f);
   border: none;
-   border-radius: 0 4px 4px 0;
-   color: #fff;
-   cursor: pointer;
-   outline: none;
-   padding: 16px;
-   text-transform: capitalize;
+  border-radius: 0 4px 4px 0;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  padding: 16px;
+  text-transform: capitalize;
+  font-family: cursive;
 }
 
-.input{
+.input {
   background: transparent;
   border: 2px solid #5d0cff;
   border-radius: 4px 0 0 4px;
-width: 500px;
+  width: 500px;
   outline: none;
+  font-family: var(--font-serif);
   padding: 14px 32px 14px 16px;
-  
 }
 /* responsive */
 @media only screen and (max-width: 500px) {
-  .form ,.todo{
+  .form,
+  .todo {
     flex-direction: column;
-   align-items: center;
-     gap:5px
+    align-items: center;
+    gap: 5px;
   }
-  .app{
-    padding: o;
+  .app {
+    padding: 10px;
+    background-size: 100px, 100px, 100%;
+    background-position-x: calc(90% + 10px), -20px,0px;
+    background-position-y: calc(90% + 10px), -20px,ppx ;
   }
-  .input{
-    width: 85%; 
+  .input {
+    width: 100%;
   }
-  .add{
+  .add {
     width: 98%;
   }
-.delete,.complete-undo{
-  padding: 5px;
-}
-}
-@media only screen and (max-width: 350px) {
-
-  .input{
-    width: 75%; 
-  }
-}
-@media only screen and (max-width: 250px) {
-
-  .input{
-    width: 65%; 
+  .delete,
+  .complete-undo {
+    padding: 5px;
   }
 }
